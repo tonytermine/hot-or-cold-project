@@ -1,10 +1,12 @@
 $(document).ready(function() {
 //*===(Variables/Functions)===*
+//random number
+var magicNum = Math.floor((Math.random()*100)+1);
 //random number generator
 var newGame = function () {
-	var randomNum = Math.floor((Math.random()*100)+1);
-	console.log("The Magic Number is " + randomNum);
-	return randomNum;
+	var magicNum = Math.floor((Math.random()*100)+1);
+	console.log("The Magic Number is " + magicNum);
+	return magicNum;
 };
 //user input value
 var userInput = function() {
@@ -28,6 +30,10 @@ var feedbackStart = $("#feedback").html();
 var feedbackReset = function () {
 	$("#feedback").html(feedbackStart);
 };
+//change feedback text
+var setFeedback = function () {
+	$("#feedback").text();
+};
 //sets count to increase by 1 after each guess
 var counter = function () {
 	$("#count").html(function(i, val) {
@@ -39,6 +45,20 @@ var countStart = $("#count").html();
 //resets the counter after each game
 var countReset = function() {
 	$("#count").html(countStart);
+};
+//difference between the userGuess and the magicNum
+var feedbackNum = function () {
+	$(userInput() - magicNum).val();
+	console.log(val());
+	return val();
+};
+//check if user input meets all the rules
+var inputAlert = function () {
+	if(userInput() != "" && $.isNumeric(userInput()) && userInput() % 1 == 0) {
+	} else if (userInput() < 1 || userInput() > 100) {
+	} else {
+		setFeedback("Please enter a whole number between 1 - 100 to play.");
+	}
 };
 //INITIAL PAGE LOAD/REFRESH--pick random number to start game and print out that number in the console.  Focus on the user input.
 newGame();
@@ -66,6 +86,8 @@ $("#guessButton").click(function(e) {
 	counter();
 	inputReset();
 	inputFocus();
+	feedbackNum();
+	inputAlert();
 });// end user guess click event
 
 });//end of document ready event
