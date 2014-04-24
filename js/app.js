@@ -79,6 +79,7 @@ $(document).ready(function() {
 		} else if (difference > 50) {
 			setFeedback("Frozen Solid!");
 		}
+		//adds higher or lower feedback after each guess.
 		if(userInput > magicNum) {
 			$(".hint").remove();
 			$(".game").append("<h2 class='hint'>" + "Guess lower!" + "</h2>");
