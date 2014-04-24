@@ -57,8 +57,8 @@ $(document).ready(function() {
 			return false;
 		}
 		//calculate Hot or Cold
-		if(userInput == magicNum) {
-			setFeedback("Winner! You Guessed The Magic Number!");
+		if(userInput === magicNum) {
+			setFeedback("Winner!!! You Guessed The Magic Number!");
 			$(".game").append("<h2 class='win'>" + "Click +New Game to Play Again!" + "</h2>");
 			disableButton();
 		} else {
@@ -78,6 +78,15 @@ $(document).ready(function() {
 			setFeedback("Ice Cold!");
 		} else if (difference > 50) {
 			setFeedback("Frozen Solid!");
+		}
+		if(userInput > magicNum) {
+			$(".hint").remove();
+			$(".game").append("<h2 class='hint'>" + "Guess lower!" + "</h2>");
+		} else if(userInput < magicNum) {
+			$(".hint").remove();
+			$(".game").append("<h2 class='hint'>" + "Guess higher!" + "</h2>");
+		}	else {
+			$(".hint").remove();
 		}
 		//appends each guess to the guess box
 		$("#guessList").append("<li>" + userInput + "</li>");
