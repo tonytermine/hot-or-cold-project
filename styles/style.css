@@ -318,4 +318,5 @@ ul.guessBox li {
 	width: 95%;
 	margin: 0.2em;
 	color: #fff;
+	word-wrap: break-word;
 }
