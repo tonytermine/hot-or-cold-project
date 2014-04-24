@@ -19,11 +19,11 @@ $(document).ready(function() {
 	};
 	//disable the guess button
 	var disableButton = function () {
-	document.getElementById("guessButton").disabled = "true";
+	document.getElementById("guessButton").disabled = true;
 	};
 	//re-enable the guess button
 	var enableButton = function () {
-	document.getElementById("guessButton").disabled = "false";
+	document.getElementById("guessButton").disabled = false;
 	};
 	//(NEW GAME button) =================================
 	//when clicked; start a new game by generating a new random number will get chosen (1-100) reset all other features.
