@@ -248,7 +248,8 @@ input {
 	border: solid 1px #98d9a6;
 }
 
-input.button {
+
+#guessButton {
 	background: #2d2620;
 	color: #98d9a6;
 	font-size: 2em;
@@ -257,11 +258,11 @@ input.button {
 	text-transform: uppercase;
 }
 
-input.button:hover {
+#guessButton:hover {
 	color: #B3FFC3;
 }
 
-input.button:active {
+#guessButton:active {
 	padding-bottom: 1px;
 }
 
@@ -269,6 +270,7 @@ input.text {
 	text-align: center;
 	padding: 0.2em;
 	font-size: 2em;
+	font-family: 'Oswald',Arial,sans-serif;
 }
 
 input:focus {
